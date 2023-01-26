@@ -1,6 +1,6 @@
 # The Milk Store
 
-<img src='./client/src/assets/milkstore.png' width='300'/>
+<img src='./client/src/assets/milkstore.png' width='800'/>
 
 ## Scenario
 A small local milk shop needs help desperately. Lately they started getting a lot of business, and they feel that they need a proper website to take a load off their store. The milk sold through this store is by the liter and there are several different types of milk to choose from. The task is to create an application which retrieves and displays mock data from an api that the user can be easily navigate through and place a mock order.
@@ -17,28 +17,27 @@ The milk data is fetched from the following api: https://github.com/saltstudy/pg
   - Pagination, show 9 cards per page.
 
 # Tech Stack
-React JS
-Typescript
-Bootstrap
-Sass
-Node JS
+React JS • 
+Typescript • 
+Bootstrap • 
+Sass • 
+Node JS • 
 Vite
 
 # Getting Started
-1. First, run the backend server:
+1. Run the backend server:
 cd server
 npm i
 npm start
 API routes can be accessed on http://localhost:8080/api/milkstore. This endpoint can be edited in server/app.ts.
 
-2. First, run the frontend development server:
+2. Run the frontend development server:
 cd client
 npm i
 npm run dev
 Open http://127.0.0.1:5173/ with your browser to see the result.
 
-# Author
-Robert Bish
+# Author: Robert Bish
 <a href='https://www.linkedin.com/in/robert-bish-1a6a8637'>
   <img src='https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white' alt='LinkedIn Badge'/>
 </a>
