@@ -20,7 +20,7 @@ const App = () => {
   const [query, setQuery] = useState<string>('');
 
   const search = (data:IResults[]) => {
-    return data.filter((product:any) =>
+    return data.filter((product:IResults) =>
       product.name.toLowerCase().includes(query.toLowerCase())
     )
   }
@@ -44,7 +44,7 @@ const App = () => {
           loading: false,
           results: milkstore?.results,
         });
-      } catch (error: any) {
+      } catch (error:any) {
         setData({
           ...data,
           loading: false,
@@ -58,15 +58,18 @@ const App = () => {
   return (
     <>
       <Header/>
-      {data.errorMessage && (<p>{data.errorMessage}</p>)}
-      {data.loading && <h1>Loading... </h1>}
+        {data.errorMessage && (<p className='p-3'>{data.errorMessage}</p>)}
+        {data.loading && (<h3 className='p-3'>Loading... </h3>)}
         <Routes>
           <Route path='/' element={<Home
             setQuery={setQuery}
             results={search(data?.results)}
             milkTypes={milkTypes(data?.results)}
             />} />
-          <Route path={`/:product`} element={<Product results={data?.results}/>} />
+          <Route path={`/:productId`} element={<Product
+            data={data}
+            setData={setData}
+            results={data?.results}/>} />
           <Route path={`/orderconfirmation`} element={<OrderConfirmation/>} />
         </Routes>
       <Footer/>

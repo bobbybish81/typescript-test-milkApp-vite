@@ -13,7 +13,7 @@ const Card = ({ product } : CardProps) => {
   return (
     <article
       className='card-article'
-      onClick={() => {navigate(`/${product.name}`)}}>
+      onClick={() => {navigate(`/${product.id}`)}}>
       <div className='card-article-img'>
         <img
           className='milk-img'
@@ -24,7 +24,7 @@ const Card = ({ product } : CardProps) => {
         <h6 className='card-title'>{product.name}</h6>
         <div className='card-detail'>
           <p>{product.type}</p>
-          <p>{`${product.storage} Liters`}</p>
+          <p>{product.storage === 0 ? 'Out of Stock' : `${product.storage} Liters`}</p>
         </div>
       </div>
     </article>

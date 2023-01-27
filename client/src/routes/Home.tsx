@@ -1,4 +1,5 @@
 import { useState, useLayoutEffect } from 'react';
+import { IoRefresh } from 'react-icons/io5';
 import IResults from '../interfaces/IResults';
 import Search from '../components/Search';
 import Card from '../components/Card';
@@ -13,7 +14,7 @@ interface HomeProps {
 
 const Home = ({ results, setQuery, milkTypes } : HomeProps) => {
 
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const cardsPerPage = 9;
 
   const lastIndex = currentPage * cardsPerPage;
@@ -33,7 +34,12 @@ const Home = ({ results, setQuery, milkTypes } : HomeProps) => {
         setQuery={setQuery}
         setCurrentPage={setCurrentPage}
         milkTypes={milkTypes}/>
-      <p className='product-count'>{`${results.length} products`}</p>
+      <p className='product-count'>
+        {`${results.length} Products`}
+        <IoRefresh
+          className='refresh'
+          onClick={()=> window.location.reload()}/>
+      </p>
       <section className='gallery'>
           {currentResults.map((product, index) => {
             return (

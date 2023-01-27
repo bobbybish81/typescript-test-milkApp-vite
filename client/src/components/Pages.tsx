@@ -1,10 +1,9 @@
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import '../styles/Pages.scss';
-
 interface PageProps {
   totalPages: number,
   currentPage: number, 
-  setCurrentPage: (number:number) => void,
+  setCurrentPage: (number:number) => number,
 }
 
 const Pages = ({totalPages, currentPage, setCurrentPage}: PageProps) => {
@@ -13,24 +12,23 @@ const Pages = ({totalPages, currentPage, setCurrentPage}: PageProps) => {
 
   const onPageClick = (e:any) => {
     e.preventDefault()
-    setCurrentPage(e.target.innerText)
+    const pageNumber = parseInt(e.target.innerText)
+    setCurrentPage(pageNumber)
   }
-
-  console.log(currentPage)
 
   return (
     <Pagination>
       <PaginationItem className={'paginationChangePage'}>
         <PaginationLink
           className={'previous'}
-          onClick={() => {currentPage === 1 ? null : setCurrentPage(currentPage - 1)}}
+          onClick={() => {currentPage === 1 ? setCurrentPage(1) : setCurrentPage(currentPage - 1)}}
           previous/>
       </PaginationItem>
-      {pageNumbers.map((number, key) => (
+      {pageNumbers.map((number, index) => (
         <PaginationItem
-          key={key}
+          key={index}
           className={'paginationItemStyle'}
-          active={currentPage == (number)}>
+          active={currentPage === (number)}>
           <PaginationLink onClick={onPageClick} className={'paginationLinkStyle'}>
             {number}
           </PaginationLink>
@@ -39,7 +37,7 @@ const Pages = ({totalPages, currentPage, setCurrentPage}: PageProps) => {
       <PaginationItem className={'paginationChangePage'}>
         <PaginationLink
           className={'next'}
-          onClick={() => {currentPage === totalPages ? null : setCurrentPage(currentPage + 1)}}
+          onClick={() => {currentPage === totalPages ? setCurrentPage(totalPages) : setCurrentPage(currentPage + 1)}}
           next/>
       </PaginationItem>
     </Pagination> 
