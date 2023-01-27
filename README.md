@@ -27,19 +27,20 @@ Vite
 
 # Getting Started
 1. Run the backend server:
-cd server
-npm i
-npm start
-API routes can be accessed on http://localhost:8080/api/milkstore. This endpoint can be edited in server/app.ts.
+- cd server
+- npm i
+- npm start
+- API routes can be accessed on http://localhost:8080/api/milkstore. This endpoint can be edited in server/app.ts.
 
-2. Run the frontend development server:
-cd client
-npm i
-npm run dev
-Open http://127.0.0.1:5173/ with your browser to see the result.
+2. Run the frontend development server:  
+- cd client
+- npm i
+- npm run dev
+- Open http://127.0.0.1:5173/ with your browser to see the result.
 
-# Author: Robert Bish
-<a href='https://www.linkedin.com/in/robert-bish-1a6a8637'>
+# Author
+Robert Bish
+- <a href='https://www.linkedin.com/in/robert-bish-1a6a8637'>
   <img src='https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white' alt='LinkedIn Badge'/>
 </a>
 <a href='https://robertbishwebdeveloper.com'>
