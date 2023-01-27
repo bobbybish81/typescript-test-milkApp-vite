@@ -39,8 +39,9 @@ Vite
 - Open http://127.0.0.1:5173/ with your browser to see the result.
 
 # Author
-Robert Bish
-- <a href='https://www.linkedin.com/in/robert-bish-1a6a8637'>
+<h3>Robert Bish</h3>
+
+<a href='https://www.linkedin.com/in/robert-bish-1a6a8637'>
   <img src='https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white' alt='LinkedIn Badge'/>
 </a>
 <a href='https://robertbishwebdeveloper.com'>
